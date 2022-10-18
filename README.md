@@ -1,65 +1,31 @@
-# ativideade1(UC06)
+# ativideade4(UC06)
 
-* Atividede 1 da Unidade Corricurar 06 do curso Senac de Desenvolvimento de Sistemas.
+* Atividede 4 da Unidade Corricurar 06 do curso Senac de Desenvolvimento de Sistemas.
 
 ## Sobre a atividade
 
-Usando o NetBeans e criando um projeto Java Ant para cada situação, codifique
-programas Java que solucionem os problemas abaixo:
+Considere um módulo contábil de um projeto em desenvolvimento. Observa-se a necessidade de representar os diferentes e complexos impostos a serem calculados em vendas de produtos. São necessários cálculos para as contribuições e os impostos a seguir:
 
-* Problema 1: Relativo ao atendimento de eventos, o hotel necessita de uma
-funcionalidade que indique qual de seus dois auditórios é o mais
-adequado para um evento. O auditório Alfa conta com 150 lugares e
-espaço para até 70 cadeiras adicionais. O auditório Beta conta com 350
-lugares, sem espaço para mais cadeiras. Desenvolva um programa Java
-que receba o número de convidados do evento e faça uma verificação
-sobre a quantidade: se for maior que 350 ou se for menor que zero, mostre
-a mensagem “Número de convidados inválido”. Se o valor informado é
-válido, mostre na tela qual dos auditórios é o mais adequado. No caso do
-auditório Alfa, calcule ainda quantas cadeiras adicionais serão
-necessárias, observando o limite citado acima.
+* PIS (Programa de Integração Social): necessita do valor total de débito e do valor total de crédito da empresa. O cálculo do imposto é “debito - credito * 1,65%”. Por exemplo: Débito R$ 30000,00; Crédito R$ 16000,00; (30000 - 16000) * 1,65% = 14000 * 1,65% = R$ 235.
 
-* Problema 2: Escreva um programa Java que faça a troca de quartos entre dois
-hospedes. Receba o nome de um cliente e sua idade; ele a princípio será
-hospedado no quarto A. Depois receba o nome de outro cliente e sua
-idade; se ele for mais jovem, ficará no quarto B, mas se for velho que o
-primeiro cliente, ele ficará no quarto A e o primeiro cliente ficará no quarto
-B. Além disso, se a pessoa mais velha for idosa (tem 60 anos ou mais)
-terá desconto de 40%. Mostre ao final o nome do cliente que ficou no
-quarto A e o desconto, se possuir, e qual ficou no quarto B.
+* IPI (Imposto sobre Produtos Industrializados): necessita do valor da alíquota e valor do produto, frete, seguro, outras despesas. A soma desses quatro últimos valores formará a base de cálculo. O cálculo então será “IPI = base de cálculo * alíquota”. Exemplo: valor R$ 90, frete R$ 10, seguro R$ 5, outras despesas R$ 5; alíquota = 5%; IPI = (90 + 10 + 5 + 5) * 5% = R$ 5,5.
 
-* Problema 3: Escreva um programa Java que receba o valor padrão de uma diária. Em
-seguida, receba vários nomes de hóspedes e suas idades. Caso o
-hóspede seja menor que 4 anos, ele não paga hospedagem – nesses
-casos mostre na tela “(Nome do hóspede) possui gratuidade”; hóspedes
-com mais de 80 anos pagam metade – mostre na tela “(Nome do
-hóspede) paga meia”. O usuário informará hóspedes até digitar a palavra
-“PARE”, que interrompe a entrada de dados. Ao fim, mostre a quantidade
-de gratuidades, a quantidade de meias hospedagens e o valor total,
-considerando todos os hóspedes informados.
+Observação: alíquota é o percentual que se calcula sobre um valor para obter o total de imposto a pagar.
 
-* Problema 4: Monte um algoritmo em que o usuário poderá cadastrar e pesquisar
-hóspedes. O algoritmo deve oferecer um menu com três opções ao
-usuário: 1- cadastrar; 2- pesquisar; 3- sair. A opção “cadastrar” deve
-permitir que o usuário informe um nome de hóspede, gravando-o em
-memória (máximo de 15 cadastros; caso atinja essa quantidade, mostre
-“Máximo de cadastros atingido”). A opção “pesquisar” deve permitir que o
-usuário informe um nome e, caso seja encontrado um nome exatamente
-igual, mostre a mensagem “Hospede (nome) foi encontrado no índice
-(índice onde foi cadastrado)”. Se o nome não foi encontrado mostre
-“Hóspede não encontrado”. O algoritmo deve permitir que o usuário
-realize essas operações repetidas vezes, até que use a opção “3”, que
-encerra o algoritmo.
+Para o sistema, note que, comumente a todos os impostos, é preciso saber calcular o valor do imposto e é preciso mostrar na tela sua descrição (“PIS”, por exemplo). Não há uma informação em comum entre os impostos, já que as bases de cálculo variam e as alíquotas podem ser fixas ou não.
+Considerando tudo isso, planeje uma hierarquia de classes para representar esses impostos e permitir que novos sejam implementados no futuro.
 
-* Problema 5: Monte um programa Java que mostre na tela em formato de tabela os
-quartos ocupados e os desocupados. Considere que o hotel tem 4
-andares e 3 quartos por andar. Primeiro o usuário registrará os quartos
-ocupados, informando para cada ocupação o número do apartamento
-(andar de 1 a 4 e número de quarto, de 1 a 3). O programa deverá
-questionar “Deseja informar outra ocupação? (S/N)” e o usuário poderá
-informar quantos quartos quiser, até que responda “N” a essa pergunta.
-Em seguida o programa mostrará uma tabela, em que o primeiro andar é
-o inferior e o último o superior, marcando com X o quarto ocupado.
+O sistema ainda contará com uma classe “Pagamentos” que contará com o nome da empresa, e uma lista de impostos a serem pagos.
+
+## Atividade
+
+Crie um projeto Java no NetBeans. Observe com atenção as características em comum entre os impostos e considere a utilização de hierarquia de classes com interfaces. Desenvolva as classes e interfaces e um programa em main(), para testar.
+
+* Crie um objeto de “Pagamentos” para o qual o usuário informará dados.
+
+* Permita que o usuário cadastre na lista de “Pagamentos” uma lista de impostos que possa receber ambos os tipos expostos no contexto. Não há um limite para a quantidade de impostos registrados – o usuário deve cadastrar vários consecutivos, informando o tipo de imposto e os valores necessários; informará “pare” para encerrar a entrada de dados de impostos.
+
+* Ao fim do cadastramento, independentemente do tipo, mostre o total calculado para cada um dos impostos cadastrados e também mostrar a descrição deles.
 
 ## Tecnologias Utilizadas
 
