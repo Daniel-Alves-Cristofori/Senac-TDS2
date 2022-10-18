@@ -1,6 +1,6 @@
 # ativideade4(UC06)
 
-* Atividede 4 da Unidade Corricurar 06 do curso Senac de Desenvolvimento de Sistemas.
+* Atividede 4 da Unidade Corricurar 06 do curso Técnico Senac de Desenvolvimento de Sistemas.
 
 ## Sobre a atividade
 
